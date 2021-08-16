@@ -5,6 +5,7 @@ import com.manueh.winxclubreborn.common.entity.CompuExplosionThrown;
 import com.manueh.winxclubreborn.common.items.CompuExplosion;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.entity.ThrownTridentRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -37,6 +38,7 @@ public class Registration {
     public static final RegistryObject<Item> COMPU_EXPLOSION = ITEMS.register("compu_explosion",
             () -> new CompuExplosion(new Item.Properties().tab(Main.GROUP)));
 
+    public static final RegistryObject<EntityType<CompuExplosionThrown>> COMPU_EXPLOSION_ENTITY = ENTITY_TYPES.register("compu_explosion_entity", () -> EntityType.Builder.<CompuExplosionThrown>of(CompuExplosionThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(Main.MODID, "compu_explosion_entity").toString()));
 
 
 }

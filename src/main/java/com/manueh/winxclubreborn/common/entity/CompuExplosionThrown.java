@@ -30,11 +30,11 @@ public class CompuExplosionThrown extends ThrowableItemProjectile {
     }
 
     public CompuExplosionThrown(LivingEntity entity, Level world) {
-        super(EntityType.EGG, entity, world);
+        super(Registration.COMPU_EXPLOSION_ENTITY.get(), entity, world);
     }
 
     public CompuExplosionThrown(double x, double y, double z, Level world) {
-        super(EntityType.EGG, x, y, z, world);
+        super(Registration.COMPU_EXPLOSION_ENTITY.get(), x, y, z, world);
     }
 
 
