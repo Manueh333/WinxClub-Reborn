@@ -1,9 +1,12 @@
 package com.manueh.winxclubreborn;
 
+import com.manueh.winxclubreborn.common.entity.CompuExplosionThrown;
+import com.manueh.winxclubreborn.common.entity.CompuExplosionThrownRenderer;
 import com.manueh.winxclubreborn.core.CreativeTab;
 import com.manueh.winxclubreborn.core.init.Registration;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -35,6 +38,5 @@ public class Main
 
 
     }
-
 
 }
