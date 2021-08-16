@@ -1,0 +1,55 @@
+{
+  "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+  "textures": {
+    "compu_explosion_top": "winxclubreborn:item/compu_explosion_top",
+    "compu_explosion_bottom": "winxclubreborn:item/compu_explosion_bottom",
+    "compu_explosion_side": "winxclubreborn:item/compu_explosion_side"
+  },
+  "display": {
+    "gui": {
+      "rotation": [ 38, 24, 0 ],
+      "translation": [ 0, 0, 0 ],
+      "scale": [ 0.625, 0.625, 0.625 ]
+    },
+    "ground": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 0, 3, 0 ],
+      "scale": [ 0.5, 0.5, 0.5 ]
+    },
+    "fixed": {
+      "rotation": [ 0, 180, 0 ],
+      "translation": [ 0, 0, 0 ],
+      "scale": [ 1, 1, 1 ]
+    },
+    "head": {
+      "rotation": [ 0, 180, 0 ],
+      "translation": [ 0, 0, 0 ],
+      "scale": [ 1, 1, 1 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, 0, 0 ],
+      "translation": [ 1, 4.5, 0 ],
+      "scale": [ 0.4, 0.4, 0.4 ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [ 75, 315, 0 ],
+      "translation": [ 0, 4.5, -3 ],
+      "scale": [ 0.375, 0.375, 0.375 ]
+    }
+  },
+  "elements": [
+    {
+      "name": "Cube",
+      "from": [ 5, 5, 5 ],
+      "to": [ 11, 11, 11 ],
+      "faces": {
+        "north": { "texture": "#compu_explosion_side", "uv": [ 0, 0, 16, 16 ] },
+        "east": { "texture": "#compu_explosion_side", "uv": [ 0, 0, 16, 16 ] },
+        "south": { "texture": "#compu_explosion_side", "uv": [ 0, 0, 16, 16 ] },
+        "west": { "texture": "#compu_explosion_side", "uv": [ 0, 0, 16, 16 ] },
+        "up": { "texture": "#compu_explosion_top", "uv": [ 0, 0, 16, 16 ] },
+        "down": { "texture": "#compu_explosion_bottom", "uv": [ 0, 0, 16, 16 ] }
+      }
+    }
+  ]
+}
