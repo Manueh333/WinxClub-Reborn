@@ -1,4 +1,10 @@
 {
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2021-08-16 23:55:56 +0200"
+    },
+    "done": true
+  },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
       "minecraft:forest": "2021-08-16 19:45:51 +0200",
