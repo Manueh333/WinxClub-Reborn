@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.function.Function;
 
 public class HitOfNatureModel extends Model {
-    public static final ResourceLocation TEXTURE = new ResourceLocation("textures/entity/compu_explosion.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation("textures/entity/hit_of_nature.png");
     private final ModelPart root;
 
     public HitOfNatureModel(ModelPart part) {
@@ -24,12 +24,14 @@ public class HitOfNatureModel extends Model {
         this.root = part;
     }
 
+
+
     public static LayerDefinition createLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
-        PartDefinition partdefinition1 = partdefinition.addOrReplaceChild("log", CubeListBuilder.create().texOffs(65, 65).addBox(0F, 128F, 0F, 32.0F, 8.0F, 8.0F), PartPose.offset(-2, 2, -4));
-        partdefinition1.addOrReplaceChild("leaves", CubeListBuilder.create().texOffs(0, 0).addBox(0F, 64F, 0F, 16.0F, 16.0F, 16.0F), PartPose.offset(14, 2, -4));
-        return LayerDefinition.create(meshdefinition, 8, 8);
+        partdefinition.addOrReplaceChild("log", CubeListBuilder.create().texOffs(0, 12).addBox(-2.0F, -8.0F, -1.0F, 3.0F, 8.0F, 3.0F, 0.0F, false), PartPose.offsetAndRotation(0,0,0,0,0,0));
+        partdefinition.addOrReplaceChild("leaves", CubeListBuilder.create().texOffs(0, 12).addBox(-2.0F, -8.0F, -1.0F, 3.0F, 8.0F, 3.0F, 0.0F, false), PartPose.offsetAndRotation(0,0,0,0,0,0));
+        return LayerDefinition.create(meshdefinition, 32, 32);
     }
 
     @Override

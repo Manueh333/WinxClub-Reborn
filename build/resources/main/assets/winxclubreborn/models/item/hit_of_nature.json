@@ -2,10 +2,10 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [96, 96],
 	"textures": {
-		"0": "block/grass_block_side",
-		"1": "block/spruce_log",
+		"0": "winxclubreborn:item/grass_side",
+		"1": "winxclubreborn:item/log",
 		"2": "winxclubreborn:item/leaves",
-		"particle": "block/grass_block_side"
+		"particle": "winxclubreborn:item/grass_side"
 	},
 	"elements": [
 		{
