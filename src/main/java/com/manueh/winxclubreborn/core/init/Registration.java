@@ -3,7 +3,9 @@ package com.manueh.winxclubreborn.core.init;
 import com.manueh.winxclubreborn.Main;
 import com.manueh.winxclubreborn.common.entity.CompuExplosionThrown;
 import com.manueh.winxclubreborn.common.entity.CompuExplosionThrownRenderer;
+import com.manueh.winxclubreborn.common.entity.HitOfNatureThrown;
 import com.manueh.winxclubreborn.common.items.CompuExplosion;
+import com.manueh.winxclubreborn.common.items.HitOfNature;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -39,10 +41,12 @@ public class Registration {
             () -> new Item(new Item.Properties().tab(Main.GROUP)));
 
     public static final RegistryObject<Item> HIT_OF_NATURE = ITEMS.register("hit_of_nature",
-            () -> new Item(new Item.Properties().tab(Main.GROUP)));
+            () -> new HitOfNature(new Item.Properties().tab(Main.GROUP).stacksTo(1)));
 
     public static final RegistryObject<Item> COMPU_EXPLOSION = ITEMS.register("compu_explosion",
-            () -> new CompuExplosion(new Item.Properties().tab(Main.GROUP)));
+            () -> new CompuExplosion(new Item.Properties().tab(Main.GROUP).stacksTo(1)));
+
+    public static final RegistryObject<EntityType<HitOfNatureThrown>> HIT_OF_NATURE_ENTITY = ENTITY_TYPES.register("hit_of_nature_entity", () -> EntityType.Builder.<HitOfNatureThrown>of(HitOfNatureThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("hit_of_nature_entity"));
 
     public static final RegistryObject<EntityType<CompuExplosionThrown>> COMPU_EXPLOSION_ENTITY = ENTITY_TYPES.register("compu_explosion_entity", () -> EntityType.Builder.<CompuExplosionThrown>of(CompuExplosionThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("compu_explosion_entity"));
 

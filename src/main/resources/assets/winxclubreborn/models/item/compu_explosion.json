@@ -3,7 +3,8 @@
   "textures": {
     "compu_explosion_top": "winxclubreborn:item/compu_explosion_top",
     "compu_explosion_bottom": "winxclubreborn:item/compu_explosion_bottom",
-    "compu_explosion_side": "winxclubreborn:item/compu_explosion_side"
+    "compu_explosion_side": "winxclubreborn:item/compu_explosion_side",
+    "particle": "winxclubreborn:item/compu_explosion_side"
   },
   "display": {
     "gui": {
