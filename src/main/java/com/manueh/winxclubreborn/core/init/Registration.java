@@ -38,6 +38,9 @@ public class Registration {
     public static final RegistryObject<Item> MAGIC_POWDER = ITEMS.register("magic_powder",
             () -> new Item(new Item.Properties().tab(Main.GROUP)));
 
+    public static final RegistryObject<Item> HIT_OF_NATURE = ITEMS.register("hit_of_nature",
+            () -> new Item(new Item.Properties().tab(Main.GROUP)));
+
     public static final RegistryObject<Item> COMPU_EXPLOSION = ITEMS.register("compu_explosion",
             () -> new CompuExplosion(new Item.Properties().tab(Main.GROUP)));
 

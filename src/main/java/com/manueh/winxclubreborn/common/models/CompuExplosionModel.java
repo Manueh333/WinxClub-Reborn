@@ -3,6 +3,7 @@ package com.manueh.winxclubreborn.common.models;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.Model;
+import net.minecraft.client.model.TridentModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
@@ -19,17 +20,17 @@ public class CompuExplosionModel extends Model {
     public static final ResourceLocation TEXTURE = new ResourceLocation("textures/entity/compu_explosion.png");
    private final ModelPart root;
 
-    public CompuExplosionModel(ModelPart p_171016_) {
+    public CompuExplosionModel(ModelPart part) {
         super(RenderType::entitySolid);
-        this.root = p_171016_;
+        this.root = part;
     }
-
 
     public static LayerDefinition createLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
-        PartDefinition partdefinition1 = partdefinition.addOrReplaceChild("cube", CubeListBuilder.create().texOffs(0, 6).addBox(-0.5F, 2.0F, -0.5F, 1.0F, 25.0F, 1.0F), PartPose.ZERO);
-       return LayerDefinition.create(meshdefinition, 32, 32);
+        PartDefinition partdefinition1 = partdefinition.addOrReplaceChild("cube", CubeListBuilder.create().texOffs(0, 0).addBox(0F, 90F, 0F, 8.0F, 8.0F, 8.0F), PartPose.offset(-2, 2, -4));
+
+        return LayerDefinition.create(meshdefinition, 8, 8);
     }
 
     @Override
