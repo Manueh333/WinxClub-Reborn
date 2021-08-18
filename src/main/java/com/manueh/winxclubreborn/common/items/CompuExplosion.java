@@ -23,7 +23,7 @@ public class CompuExplosion extends Item {
         if (!level.isClientSide) {
             CompuExplosionThrown projectile = new CompuExplosionThrown(player, level);
             projectile.setItem(item);
-            projectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+            projectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 3F, 0F);
             level.addFreshEntity(projectile);
         }
         return InteractionResultHolder.sidedSuccess(item, level.isClientSide());

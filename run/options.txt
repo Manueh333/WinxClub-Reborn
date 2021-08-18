@@ -36,7 +36,7 @@ biomeBlendRadius:2
 renderClouds:true
 resourcePacks:[]
 incompatibleResourcePacks:[]
-lastServer:
+lastServer:localhost
 lang:en_us
 chatVisibility:0
 chatOpacity:1.0
@@ -65,7 +65,7 @@ rawMouseInput:true
 glDebugVerbosity:1
 skipMultiplayerWarning:false
 hideMatchedNames:true
-joinedFirstServer:false
+joinedFirstServer:true
 hideBundleTutorial:false
 syncChunkWrites:true
 key_key.attack:key.mouse.left

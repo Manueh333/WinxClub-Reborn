@@ -8,5 +8,11 @@
   "item.winxclubreborn.wand" : "Anillo de Solaria",
   "item.winxclubreborn.power_ball" : "Bola de poder",
   "item.winxclubreborn.magic_sword" : "Espada Mágica",
-  "itemGroup.winxclubreborn_tab": "WinxClub Reborn"
+  "itemGroup.winxclubreborn_tab": "WinxClub Reborn",
+  "death.attack.compu_explosion": "%1$s fue explotado por una Compu-Explosión",
+  "death.attack.compu_explosion.item": "%1$s fue explotado con la Compu-Explosión de %2$s",
+  "death.attack.wolf_claw": "%1$s fue mordido por una Garra de Lobo",
+  "death.attack.wolf_claw.item": "%1$s fue mordido por la Garra de lobo de %2$s",
+  "death.attack.sound_wave": "%1$s fue explotado por una Onda Sonora",
+  "death.attack.sound_wave.item": "%1$s fue explotado con la Onda Sonora de %2$s"
 }

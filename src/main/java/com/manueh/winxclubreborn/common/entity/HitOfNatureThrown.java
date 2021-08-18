@@ -62,6 +62,7 @@ public class HitOfNatureThrown extends ThrowableItemProjectile {
             level.setBlockAndUpdate(new BlockPos(hit.getLocation().add(0, 3, 1)), Blocks.SPRUCE_LEAVES.defaultBlockState());
             level.setBlockAndUpdate(new BlockPos(hit.getLocation().add(0, 3, -1)), Blocks.SPRUCE_LEAVES.defaultBlockState());
             level.setBlockAndUpdate(new BlockPos(hit.getLocation().add(0, 4, 0)), Blocks.SPRUCE_LEAVES.defaultBlockState());
+            level.setBlockAndUpdate(new BlockPos(hit.getLocation().add(0, 4, 0)), Blocks.SPRUCE_LEAVES.defaultBlockState());
 
             this.level.broadcastEntityEvent(this, (byte)3);
             this.discard();

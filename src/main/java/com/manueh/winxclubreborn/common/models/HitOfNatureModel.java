@@ -29,8 +29,8 @@ public class HitOfNatureModel extends Model {
     public static LayerDefinition createLayer() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
-        partdefinition.addOrReplaceChild("log", CubeListBuilder.create().texOffs(0, 12).addBox(-2.0F, -8.0F, -1.0F, 3.0F, 8.0F, 3.0F, 0.0F, false), PartPose.offsetAndRotation(0,0,0,0,0,0));
-        partdefinition.addOrReplaceChild("leaves", CubeListBuilder.create().texOffs(0, 12).addBox(-2.0F, -8.0F, -1.0F, 3.0F, 8.0F, 3.0F, 0.0F, false), PartPose.offsetAndRotation(0,0,0,0,0,0));
+        PartDefinition partdefinition1 = partdefinition.addOrReplaceChild("log", CubeListBuilder.create().texOffs(0, 12).addBox(-2.0F, -8.0F, -1.0F, 3.0F, 8.0F, 3.0F), PartPose.offsetAndRotation(0,0,0,0,24F,0));
+        PartDefinition partdefinition2 = partdefinition1.addOrReplaceChild("leaves", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -12.0F, -3.0F, 7.0F, 5.0F, 7.0F), PartPose.offsetAndRotation(0,0,0,0,24f,0));
         return LayerDefinition.create(meshdefinition, 32, 32);
     }
 
