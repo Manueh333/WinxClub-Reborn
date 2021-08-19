@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "winxclubreborn:block/magic_generator",
+    "up": "winxclubreborn:block/magic_generator",
+    "north": "winxclubreborn:block/magic_generator_front",
+    "south": "winxclubreborn:block/magic_generator",
+    "east": "winxclubreborn:block/magic_generator",
+    "west": "winxclubreborn:block/magic_generator",
+    "particles": "winxclubreborn:block/magic_generator"
+  }
+}

@@ -19,5 +19,7 @@ public class Items extends ItemModelProvider {
         singleTexture(Registration.MAGIC_POWDER.get().getRegistryName().getPath(),
                 new ResourceLocation("item/handheld"), "layer0",
                 new ResourceLocation(Main.MODID, "item/magic_powder"));
+
+        withExistingParent(Registration.GENERATOR_ITEM.get().getRegistryName().getPath(), new ResourceLocation(Main.MODID, "block/magic_generator"));
     }
 }

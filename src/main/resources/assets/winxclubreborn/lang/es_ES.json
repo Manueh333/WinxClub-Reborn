@@ -15,5 +15,7 @@
   "death.attack.wolf_claw": "%1$s fue mordido por una Garra de Lobo",
   "death.attack.wolf_claw.item": "%1$s fue mordido por la Garra de lobo de %2$s",
   "death.attack.sound_wave": "%1$s fue explotado por una Onda Sonora",
-  "death.attack.sound_wave.item": "%1$s fue explotado con la Onda Sonora de %2$s"
+  "death.attack.sound_wave.item": "%1$s fue explotado con la Onda Sonora de %2$s",
+  "death.attack.power_ball": "%1$s fue explotado por una Bola de poder",
+  "death.attack.power_ball.item": "%1$s fue explotado con la Bola de poder de %2$s"
 }
