@@ -2,10 +2,7 @@ package com.manueh.winxclubreborn.core.init;
 
 import com.manueh.winxclubreborn.Main;
 import com.manueh.winxclubreborn.common.entity.*;
-import com.manueh.winxclubreborn.common.items.CompuExplosion;
-import com.manueh.winxclubreborn.common.items.HitOfNature;
-import com.manueh.winxclubreborn.common.items.SoundWave;
-import com.manueh.winxclubreborn.common.items.WolfClaw;
+import com.manueh.winxclubreborn.common.items.*;
 import com.manueh.winxclubreborn.common.tiers.MagicTier;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -18,6 +15,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.projectile.ThrownEgg;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,11 +28,13 @@ public class Registration {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Main.MODID);
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Main.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Main.MODID);
 
     public static void init() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(bus);
         ENTITY_TYPES.register(bus);
+        BLOCKS.register(bus);
 
     }
 
@@ -53,6 +53,15 @@ public class Registration {
     public static final RegistryObject<Item> WOLF_CLAW = ITEMS.register("wolf_claw",
             () -> new WolfClaw(MagicTier.MAGIC, 3, -2.4F, new Item.Properties().tab(Main.GROUP).stacksTo(1)));
 
+    public static final RegistryObject<Item> DRAGON_FURY = ITEMS.register("dragon_fury",
+            () -> new DragonFury(new Item.Properties().tab(Main.GROUP).stacksTo(1)));
+
+    public static final RegistryObject<Item> SOLARIA_RING = ITEMS.register("solaria_ring",
+            () -> new SolariaRing(MagicTier.MAGIC, 1, -3.0F, new Item.Properties().tab(Main.GROUP).stacksTo(1)));
+
+    public static final RegistryObject<Item> POWER_BALL = ITEMS.register("power_ball",
+            () -> new PowerBall(new Item.Properties().tab(Main.GROUP).stacksTo(1)));
+
     public static final RegistryObject<EntityType<HitOfNatureThrown>> HIT_OF_NATURE_ENTITY = ENTITY_TYPES.register("hit_of_nature_entity", () -> EntityType.Builder.<HitOfNatureThrown>of(HitOfNatureThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("hit_of_nature_entity"));
 
     public static final RegistryObject<EntityType<CompuExplosionThrown>> COMPU_EXPLOSION_ENTITY = ENTITY_TYPES.register("compu_explosion_entity", () -> EntityType.Builder.<CompuExplosionThrown>of(CompuExplosionThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("compu_explosion_entity"));
@@ -62,5 +71,9 @@ public class Registration {
     public static final RegistryObject<EntityType<WolfClawThrown>> WOLF_CLAW_ENTITY = ENTITY_TYPES.register("wolf_claw_entity", () -> EntityType.Builder.<WolfClawThrown>of(WolfClawThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("wolf_claw_entity"));
 
     public static final RegistryObject<EntityType<DragonFuryThrown>> DRAGON_FURY_ENTITY = ENTITY_TYPES.register("dragon_fury_entity", () -> EntityType.Builder.<DragonFuryThrown>of(DragonFuryThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("dragon_fury_entity"));
+
+    public static final RegistryObject<EntityType<SolariaRingThrown>> SOLARIA_RING_ENTITY = ENTITY_TYPES.register("solaria_ring_entity", () -> EntityType.Builder.<SolariaRingThrown>of(SolariaRingThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("solaria_ring_entity"));
+
+    public static final RegistryObject<EntityType<PowerBallThrown>> POWER_BALL_ENTITY = ENTITY_TYPES.register("power_ball_entity", () -> EntityType.Builder.<PowerBallThrown>of(PowerBallThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("power_ball_entity"));
 
 }

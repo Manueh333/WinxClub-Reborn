@@ -20,6 +20,9 @@ public class ClientRenderer {
     public static ModelLayerLocation SOUND_WAVE_LAYER = new ModelLayerLocation(new ResourceLocation(Main.MODID, "sound_wave"), "sound_wave");
     public static ModelLayerLocation WOLF_CLAW_LAYER = new ModelLayerLocation(new ResourceLocation(Main.MODID, "wolf_claw"), "wolf_claw");
     public static ModelLayerLocation DRAGON_FURY_LAYER = new ModelLayerLocation(new ResourceLocation(Main.MODID, "dragon_fury"), "dragon_fury");
+    public static ModelLayerLocation SOLARIA_RING_LAYER = new ModelLayerLocation(new ResourceLocation(Main.MODID, "solaria_ring"), "solaria_ring");
+    public static ModelLayerLocation POWER_BALL_LAYER = new ModelLayerLocation(new ResourceLocation(Main.MODID, "power_ball"), "power_ball");
+
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
@@ -28,6 +31,9 @@ public class ClientRenderer {
         event.registerEntityRenderer(Registration.SOUND_WAVE_ENTITY.get(), SoundWaveThrownRenderer::new);
         event.registerEntityRenderer(Registration.WOLF_CLAW_ENTITY.get(), WolfClawThrownRenderer::new);
         event.registerEntityRenderer(Registration.DRAGON_FURY_ENTITY.get(), DragonFuryThrownRenderer::new);
+        event.registerEntityRenderer(Registration.SOLARIA_RING_ENTITY.get(), SolariaRingThrownRenderer::new);
+        event.registerEntityRenderer(Registration.POWER_BALL_ENTITY.get(), PowerBallThrownRenderer::new);
+
     }
 
     @SubscribeEvent
@@ -37,5 +43,7 @@ public class ClientRenderer {
         event.registerLayerDefinition(SOUND_WAVE_LAYER, SoundWaveModel::createLayer);
         event.registerLayerDefinition(WOLF_CLAW_LAYER, WolfClawModel::createLayer);
         event.registerLayerDefinition(DRAGON_FURY_LAYER, DragonFuryModel::createLayer);
+        event.registerLayerDefinition(SOLARIA_RING_LAYER, SolariaRingModel::createLayer);
+        event.registerLayerDefinition(POWER_BALL_LAYER, PowerBallModel::createLayer);
     }
 }

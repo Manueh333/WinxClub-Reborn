@@ -26,7 +26,7 @@ public class DragonFuryModel extends Model {
         PartDefinition partdefinition = meshdefinition.getRoot();
         PartDefinition partdefinition1 = partdefinition.addOrReplaceChild("cube", CubeListBuilder.create().texOffs(0, 0).addBox(0F, 90F, 0F, 8.0F, 8.0F, 8.0F), PartPose.offset(-2, 2, -4));
 
-        return LayerDefinition.create(meshdefinition, 8, 8);
+        return LayerDefinition.create(meshdefinition, 16, 16);
     }
 
     @Override

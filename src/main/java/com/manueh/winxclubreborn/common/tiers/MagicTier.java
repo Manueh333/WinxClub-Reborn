@@ -10,7 +10,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum MagicTier implements Tier {
-    MAGIC(5, 2500, 9.0F, 4.0F, 15, () -> {
+    MAGIC(5, 0, 9.0F, 4.0F, 15, () -> {
         return Ingredient.of(Registration.MAGIC_POWDER.get());
     });
 

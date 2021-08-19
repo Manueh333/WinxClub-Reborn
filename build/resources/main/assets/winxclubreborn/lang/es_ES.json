@@ -8,6 +8,7 @@
   "item.winxclubreborn.wand" : "Anillo de Solaria",
   "item.winxclubreborn.power_ball" : "Bola de poder",
   "item.winxclubreborn.magic_sword" : "Espada Mágica",
+  "item.winxclubreborn.solaria_ring" : "Anillo de Solaria",
   "itemGroup.winxclubreborn_tab": "WinxClub Reborn",
   "death.attack.compu_explosion": "%1$s fue explotado por una Compu-Explosión",
   "death.attack.compu_explosion.item": "%1$s fue explotado con la Compu-Explosión de %2$s",

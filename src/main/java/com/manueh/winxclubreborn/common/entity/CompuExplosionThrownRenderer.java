@@ -29,7 +29,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public class CompuExplosionThrownRenderer extends EntityRenderer<CompuExplosionThrown> {
-    public static final ResourceLocation COMPU_EXPLOSION_TEXTURE = new ResourceLocation(Main.MODID, "textures/entity/compu_explosion.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(Main.MODID, "textures/entity/compu_explosion.png");
     private CompuExplosionModel model;
 
     public CompuExplosionThrownRenderer(EntityRendererProvider.Context context) {
@@ -49,6 +49,6 @@ public class CompuExplosionThrownRenderer extends EntityRenderer<CompuExplosionT
 
     @Override
     public ResourceLocation getTextureLocation(CompuExplosionThrown p_114482_) {
-        return COMPU_EXPLOSION_TEXTURE;
+        return TEXTURE;
     }
 }

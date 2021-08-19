@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "winxclubreborn",
+  "pattern": [
+    "pdp",
+    " p ",
+    " p "
+  ],
+  "key": {
+    "p": {
+      "item": "winxclubreborn:magic_powder"
+    },
+    "d": {
+      "item": "minecraft:diamond_block"
+    }
+  },
+  "result": {
+    "item": "winxclubreborn:solaria_ring"
+  }
+}

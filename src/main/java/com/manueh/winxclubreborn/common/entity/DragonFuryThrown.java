@@ -18,20 +18,17 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 
 public class DragonFuryThrown extends ThrowableItemProjectile {
-    public static final EntityDataAccessor<ItemStack> CompuExplosion = SynchedEntityData.defineId(DragonFuryThrown.class, EntityDataSerializers.ITEM_STACK);
-    public static final EntityDataAccessor<Byte> PIERCING_LEVEL = SynchedEntityData.defineId(DragonFuryThrown.class, EntityDataSerializers.BYTE);
-
 
     public DragonFuryThrown(EntityType<? extends ThrowableItemProjectile> p_37432_, Level world) {
         super(p_37432_, world);
     }
 
     public DragonFuryThrown(LivingEntity entity, Level world) {
-        super(Registration.COMPU_EXPLOSION_ENTITY.get(), entity, world);
+        super(Registration.DRAGON_FURY_ENTITY.get(), entity, world);
     }
 
     public DragonFuryThrown(double x, double y, double z, Level world) {
-        super(Registration.COMPU_EXPLOSION_ENTITY.get(), x, y, z, world);
+        super(Registration.DRAGON_FURY_ENTITY.get(), x, y, z, world);
     }
 
 
@@ -51,7 +48,7 @@ public class DragonFuryThrown extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             float var1 = 4.0F;
-            this.level.explode(this, new DamageSource("compu_explosion"), (ExplosionDamageCalculator) null,(double) this.getX(), (double)this.getY(0.0625D), (double) this.getZ(), 4.0F, false, Explosion.BlockInteraction.BREAK);
+            this.level.explode(this, new DamageSource("dragon_fury"), (ExplosionDamageCalculator) null,(double) this.getX(), (double)this.getY(0.0625D), (double) this.getZ(), 4.0F, true, Explosion.BlockInteraction.BREAK);
 
             this.level.broadcastEntityEvent(this, (byte)3);
             this.discard();
@@ -60,6 +57,6 @@ public class DragonFuryThrown extends ThrowableItemProjectile {
     }
     @Override
     protected Item getDefaultItem() {
-        return Registration.COMPU_EXPLOSION.get().asItem();
+        return Registration.DRAGON_FURY.get().asItem();
     }
 }

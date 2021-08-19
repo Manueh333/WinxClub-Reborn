@@ -1,3 +1,28 @@
+Build: 1.17.1-37.0.39 - Wed Aug 18 20:49:43 GMT 2021
+	Commoble:
+		Add support for forge's "remove" list to tag datagenerators (#7911)
+
+=========
+Build: 1.17.1-37.0.38 - Wed Aug 18 20:05:33 GMT 2021
+	sirttas:
+		Add hook to allow items to customize the attack sweep range. (#7981)
+
+=========
+Build: 1.17.1-37.0.37 - Wed Aug 18 19:46:48 GMT 2021
+	git:
+		Track the active mod within DeferredWorkQueue (#7973)
+
+=========
+Build: 1.17.1-37.0.36 - Wed Aug 18 09:16:16 GMT 2021
+	28724985+strikerrocker:
+		Allow to check spawner block entity in events (#7941)
+
+=========
+Build: 1.17.1-37.0.35 - Wed Aug 18 05:02:56 GMT 2021
+	cyborgmas:
+		Remove neutral mob patches as the bug was fixed upstream. (#8001)
+
+=========
 Build: 1.17.1-37.0.34 - Sun Aug 15 14:18:49 GMT 2021
 	malte0811:
 		Ensure that all render targets in a PostChain use the same format (#7978)
