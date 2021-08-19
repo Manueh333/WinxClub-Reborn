@@ -43,9 +43,9 @@ public class Registration {
     public static final RegistryObject<Block> GENERATOR = BLOCKS.register("magic_generator", MagicPowderGenerator::new);
     public static final RegistryObject<Item> GENERATOR_ITEM = ITEMS.register("magic_generator",
             () -> new BlockItem(GENERATOR.get(), new Item.Properties().tab(Main.GROUP).stacksTo(1)));
-    public static final RegistryObject<BlockEntityType<MagicGeneratorBlockEntity>> GENERATOR_BE = BLOCKENTITIES.register("magic_generator",
+    public static final RegistryObject<BlockEntityType<MagicGeneratorBlockEntity>> GENERATOR_BE = BLOCKENTITIES.register("magic_generator_block_entity",
             () -> BlockEntityType.Builder.of(MagicGeneratorBlockEntity::new, GENERATOR.get()).build(null));
-    public static final RegistryObject<MenuType<MagicGeneratorContainer>> GENERATOR_CONTAINER = CONTAINERS.register("magic_generator", () -> IForgeContainerType.create((windowId, inv, data) -> {
+    public static final RegistryObject<MenuType<MagicGeneratorContainer>> GENERATOR_CONTAINER = CONTAINERS.register("magic_generator_container", () -> IForgeContainerType.create((windowId, inv, data) -> {
         BlockPos pos = data.readBlockPos();
         Level world = inv.player.getCommandSenderWorld();
         return new MagicGeneratorContainer(windowId, world, pos, inv, inv.player);
