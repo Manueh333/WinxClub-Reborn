@@ -50,7 +50,7 @@ public class MagicGeneratorBlockEntity extends BlockEntity {
     public void tickServer(BlockState state) {
         if (counter > 0) {
             counter--;
-            energyStorage.addEnergy(50);
+            energyStorage.addEnergy(1);
             setChanged();
         }
 
