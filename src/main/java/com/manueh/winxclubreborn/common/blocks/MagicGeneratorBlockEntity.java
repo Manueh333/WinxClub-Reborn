@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class GeneratorBE extends BlockEntity {
+public class MagicGeneratorBlockEntity extends BlockEntity {
 
     private final ItemStackHandler itemHandler = createHandler();
     private final MagicPowderStorage energyStorage = createEnergy();
@@ -35,7 +35,7 @@ public class GeneratorBE extends BlockEntity {
 
     private int counter;
 
-    public GeneratorBE(BlockPos pos, BlockState state) {
+    public MagicGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(Registration.GENERATOR_BE.get(), pos, state);
     }
 

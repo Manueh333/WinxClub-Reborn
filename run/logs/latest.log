@@ -71,7 +71,7 @@
 [11:22:37] [Render thread/FATAL]: Error executing task on Client
 java.lang.IllegalArgumentException: Can not deserialize to an instance that isn't the default implementation
 	at net.minecraftforge.energy.EnergyStorage.deserializeNBT(EnergyStorage.java:120) ~[forge-1.17.1-37.0.39_mapped_official_1.17.1-recomp.jar%2373%2379!:?]
-	at com.manueh.winxclubreborn.common.blocks.GeneratorBE.load(GeneratorBE.java:105) ~[%2378!:?]
+	at com.manueh.winxclubreborn.common.blocks.MagicGeneratorBlockEntity.load(GeneratorBE.java:105) ~[%2378!:?]
 	at net.minecraftforge.common.extensions.IForgeBlockEntity.handleUpdateTag(IForgeBlockEntity.java:76) ~[forge-1.17.1-37.0.39_mapped_official_1.17.1-recomp.jar%2373%2379!:?]
 	at net.minecraft.client.multiplayer.ClientPacketListener.handleLevelChunk(ClientPacketListener.java:617) ~[forge-1.17.1-37.0.39_mapped_official_1.17.1-recomp.jar%2374!:?]
 	at net.minecraft.network.protocol.game.ClientboundLevelChunkPacket.handle(ClientboundLevelChunkPacket.java:88) ~[forge-1.17.1-37.0.39_mapped_official_1.17.1-recomp.jar%2374!:?]

@@ -50,7 +50,7 @@ public class MagicPowderGenerator extends Block implements EntityBlock {
             return null;
         } else {
             return (level1, pos, state1, tile) -> {
-                if (tile instanceof GeneratorBE generator) {
+                if (tile instanceof MagicGeneratorBlockEntity generator) {
                     generator.tickServer(state1);
                 }
             };
@@ -60,13 +60,13 @@ public class MagicPowderGenerator extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new GeneratorBE(pos, state);
+        return new MagicGeneratorBlockEntity(pos, state);
     }
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult trace) {
         if (!level.isClientSide) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof GeneratorBE) {
+            if (blockEntity instanceof MagicGeneratorBlockEntity) {
                 MenuProvider containerProvider = new MenuProvider() {
                     @Override
                     public Component getDisplayName() {
@@ -75,7 +75,7 @@ public class MagicPowderGenerator extends Block implements EntityBlock {
 
                     @Override
                     public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory, Player playerEntity) {
-                        return new GeneratorContainer(windowId, level, pos, playerInventory, playerEntity);
+                        return new MagicGeneratorContainer(windowId, level, pos, playerInventory, playerEntity);
                     }
                 };
                 NetworkHooks.openGui((ServerPlayer) player, containerProvider, blockEntity.getBlockPos());

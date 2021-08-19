@@ -21,13 +21,13 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class GeneratorContainer extends AbstractContainerMenu {
+public class MagicGeneratorContainer extends AbstractContainerMenu {
 
     private BlockEntity blockEntity;
     private Player playerEntity;
     private IItemHandler playerInventory;
 
-    public GeneratorContainer(int windowId, Level world, BlockPos pos, Inventory playerInventory, Player player) {
+    public MagicGeneratorContainer(int windowId, Level world, BlockPos pos, Inventory playerInventory, Player player) {
         super(Registration.GENERATOR_CONTAINER.get(), windowId);
         blockEntity = world.getBlockEntity(pos);
         this.playerEntity = player;

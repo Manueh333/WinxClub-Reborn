@@ -1,31 +1,21 @@
 package com.manueh.winxclubreborn.core.init;
 
 import com.manueh.winxclubreborn.Main;
-import com.manueh.winxclubreborn.common.blocks.GeneratorBE;
-import com.manueh.winxclubreborn.common.blocks.GeneratorContainer;
+import com.manueh.winxclubreborn.common.blocks.MagicGeneratorBlockEntity;
+import com.manueh.winxclubreborn.common.blocks.MagicGeneratorContainer;
 import com.manueh.winxclubreborn.common.blocks.MagicPowderGenerator;
 import com.manueh.winxclubreborn.common.entity.*;
 import com.manueh.winxclubreborn.common.items.*;
 import com.manueh.winxclubreborn.common.tiers.MagicTier;
-import net.minecraft.client.renderer.entity.EntityRenderer;
-import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.client.renderer.entity.ThrownTridentRenderer;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.projectile.ThrownEgg;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.entity.EntityTypeTest;
-import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -53,12 +43,12 @@ public class Registration {
     public static final RegistryObject<Block> GENERATOR = BLOCKS.register("magic_generator", MagicPowderGenerator::new);
     public static final RegistryObject<Item> GENERATOR_ITEM = ITEMS.register("magic_generator",
             () -> new BlockItem(GENERATOR.get(), new Item.Properties().tab(Main.GROUP).stacksTo(1)));
-    public static final RegistryObject<BlockEntityType<GeneratorBE>> GENERATOR_BE = BLOCKENTITIES.register("magic_generator",
-            () -> BlockEntityType.Builder.of(GeneratorBE::new, GENERATOR.get()).build(null));
-    public static final RegistryObject<MenuType<GeneratorContainer>> GENERATOR_CONTAINER = CONTAINERS.register("magic_generator", () -> IForgeContainerType.create((windowId, inv, data) -> {
+    public static final RegistryObject<BlockEntityType<MagicGeneratorBlockEntity>> GENERATOR_BE = BLOCKENTITIES.register("magic_generator",
+            () -> BlockEntityType.Builder.of(MagicGeneratorBlockEntity::new, GENERATOR.get()).build(null));
+    public static final RegistryObject<MenuType<MagicGeneratorContainer>> GENERATOR_CONTAINER = CONTAINERS.register("magic_generator", () -> IForgeContainerType.create((windowId, inv, data) -> {
         BlockPos pos = data.readBlockPos();
         Level world = inv.player.getCommandSenderWorld();
-        return new GeneratorContainer(windowId, world, pos, inv, inv.player);
+        return new MagicGeneratorContainer(windowId, world, pos, inv, inv.player);
     }));
     //POWERS
     public static final RegistryObject<Item> MAGIC_POWDER = ITEMS.register("magic_powder",
