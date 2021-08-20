@@ -1,15 +1,22 @@
 package com.manueh.winxclubreborn.core.init;
 
 import com.manueh.winxclubreborn.Main;
+import com.manueh.winxclubreborn.common.armor.WingsLayer;
 import com.manueh.winxclubreborn.common.blocks.BlockBase;
 import com.manueh.winxclubreborn.common.entity.*;
 import com.manueh.winxclubreborn.common.items.*;
+import com.manueh.winxclubreborn.common.tiers.MagicArmorTier;
 import com.manueh.winxclubreborn.common.tiers.MagicTier;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
@@ -51,7 +58,7 @@ public class Registration {
             () -> new Item(new Item.Properties().tab(Main.GROUP).fireResistant()));
 
     public static final RegistryObject<Item> WINGS = ITEMS.register("wings",
-            () -> new Item(new Item.Properties().tab(Main.GROUP).fireResistant()));
+            () -> new ArmorItem(MagicArmorTier.MAGIC, EquipmentSlot.CHEST, new Item.Properties().tab(Main.GROUP).fireResistant()));
 
     public static final RegistryObject<Item> HIT_OF_NATURE = ITEMS.register("hit_of_nature",
             () -> new HitOfNature(new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
@@ -88,5 +95,6 @@ public class Registration {
     public static final RegistryObject<EntityType<SolariaRingThrown>> SOLARIA_RING_ENTITY = ENTITY_TYPES.register("solaria_ring_entity", () -> EntityType.Builder.<SolariaRingThrown>of(SolariaRingThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("solaria_ring_entity"));
 
     public static final RegistryObject<EntityType<PowerBallThrown>> POWER_BALL_ENTITY = ENTITY_TYPES.register("power_ball_entity", () -> EntityType.Builder.<PowerBallThrown>of(PowerBallThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("power_ball_entity"));
+
 
 }

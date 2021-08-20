@@ -19,8 +19,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 
 public class SolariaRingThrown extends ThrowableItemProjectile {
-    public static final EntityDataAccessor<ItemStack> CompuExplosion = SynchedEntityData.defineId(SolariaRingThrown.class, EntityDataSerializers.ITEM_STACK);
-    public static final EntityDataAccessor<Byte> PIERCING_LEVEL = SynchedEntityData.defineId(SolariaRingThrown.class, EntityDataSerializers.BYTE);
 
 
     public SolariaRingThrown(EntityType<? extends ThrowableItemProjectile> p_37432_, Level world) {
@@ -56,7 +54,32 @@ public class SolariaRingThrown extends ThrowableItemProjectile {
             LightningBolt bolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
             bolt.setPos(this.getX(), this.getY(), this.getZ());
             this.level.addFreshEntity(bolt);
+            LightningBolt bolt1 = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+            bolt1.setPos(this.getX()+1, this.getY(), this.getZ());
+            this.level.addFreshEntity(bolt1);
+            LightningBolt bolt2 = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+            bolt2.setPos(this.getX()-1, this.getY(), this.getZ());
+            this.level.addFreshEntity(bolt2);
+            LightningBolt bolt3 = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+            bolt3.setPos(this.getX(), this.getY(), this.getZ()+1);
+            this.level.addFreshEntity(bolt3);
+            LightningBolt bolt4 = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+            bolt4.setPos(this.getX(), this.getY(), this.getZ()-1);
+            this.level.addFreshEntity(bolt4);
+            LightningBolt bolt5 = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+            bolt5.setPos(this.getX()+1, this.getY(), this.getZ()+1);
+            this.level.addFreshEntity(bolt5);
+            LightningBolt bolt6 = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+            bolt6.setPos(this.getX()-1, this.getY(), this.getZ()+1);
+            this.level.addFreshEntity(bolt6);
+            LightningBolt bolt7 = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+            bolt7.setPos(this.getX()+1, this.getY(), this.getZ()-1);
+            this.level.addFreshEntity(bolt7);
+            LightningBolt bolt8 = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
+            bolt8.setPos(this.getX()-1, this.getY(), this.getZ()-1);
+            this.level.addFreshEntity(bolt8);
             this.level.broadcastEntityEvent(this, (byte)3);
+
             this.discard();
         }
 
