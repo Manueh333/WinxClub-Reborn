@@ -20,6 +20,6 @@ public class Items extends ItemModelProvider {
                 new ResourceLocation("item/handheld"), "layer0",
                 new ResourceLocation(Main.MODID, "item/magic_powder"));
 
-        withExistingParent(Registration.GENERATOR_ITEM.get().getRegistryName().getPath(), new ResourceLocation(Main.MODID, "block/magic_generator"));
+        withExistingParent(Registration.MAGIC_ORE_ITEM.get().getRegistryName().getPath(), new ResourceLocation(Main.MODID, "block/magic_ore"));
     }
 }

@@ -2,6 +2,7 @@ package com.manueh.winxclubreborn.datagen;
 
 import com.manueh.winxclubreborn.Main;
 import com.manueh.winxclubreborn.core.init.Registration;
+import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -27,7 +28,9 @@ public class BlockStates extends BlockStateProvider {
     }
 
     private void registerGeneratorBlock() {
-        ResourceLocation txt = new ResourceLocation(Main.MODID, "block/magic_generator");
+
+
+   /*     ResourceLocation txt = new ResourceLocation(Main.MODID, "block/magic_generator");
         BlockModelBuilder modelGenerator = models().cube("magic_generator",
                 txt, txt, new ResourceLocation(Main.MODID, "block/magic_generator_front"), txt, txt, txt);
         BlockModelBuilder modelGeneratorPowered = models().cube("magic_generator_powered",
@@ -38,7 +41,7 @@ public class BlockStates extends BlockStateProvider {
             } else {
                 return modelGenerator;
             }
-        });
+        });    */
     }
 
     private void orientedBlock(Block block, Function<BlockState, ModelFile> modelFunc) {

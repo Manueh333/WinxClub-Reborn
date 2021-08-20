@@ -1,8 +1,5 @@
 package com.manueh.winxclubreborn;
 
-import com.manueh.winxclubreborn.common.blocks.MagicGeneratorScreen;
-import com.manueh.winxclubreborn.common.entity.CompuExplosionThrown;
-import com.manueh.winxclubreborn.common.entity.CompuExplosionThrownRenderer;
 import com.manueh.winxclubreborn.core.CreativeTab;
 import com.manueh.winxclubreborn.core.init.Registration;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -41,7 +38,7 @@ public class Main
 
     public void ClientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            MenuScreens.register(Registration.GENERATOR_CONTAINER.get(), MagicGeneratorScreen::new);
+         //   MenuScreens.register(Registration.GENERATOR_CONTAINER.get(), MagicGeneratorScreen::new);
 
             });}
 

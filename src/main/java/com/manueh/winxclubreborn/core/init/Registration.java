@@ -1,13 +1,12 @@
 package com.manueh.winxclubreborn.core.init;
 
 import com.manueh.winxclubreborn.Main;
-import com.manueh.winxclubreborn.common.blocks.MagicGeneratorBlockEntity;
-import com.manueh.winxclubreborn.common.blocks.MagicGeneratorContainer;
-import com.manueh.winxclubreborn.common.blocks.MagicPowderGenerator;
+import com.manueh.winxclubreborn.common.blocks.BlockBase;
 import com.manueh.winxclubreborn.common.entity.*;
 import com.manueh.winxclubreborn.common.items.*;
 import com.manueh.winxclubreborn.common.tiers.MagicTier;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.inventory.MenuType;
@@ -15,8 +14,11 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.MushroomBlock;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.OreBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -41,16 +43,9 @@ public class Registration {
     }
 
     //BLOCKS
-    public static final RegistryObject<Block> GENERATOR = BLOCKS.register("magic_generator", MagicPowderGenerator::new);
-    public static final RegistryObject<Item> GENERATOR_ITEM = ITEMS.register("magic_generator",
-            () -> new BlockItem(GENERATOR.get(), new Item.Properties().tab(Main.GROUP).stacksTo(1)));
-    public static final RegistryObject<BlockEntityType<MagicGeneratorBlockEntity>> GENERATOR_BE = BLOCKENTITIES.register("magic_generator_block_entity",
-            () -> BlockEntityType.Builder.of(MagicGeneratorBlockEntity::new, GENERATOR.get()).build(null));
-    public static final RegistryObject<MenuType<MagicGeneratorContainer>> GENERATOR_CONTAINER = CONTAINERS.register("magic_generator_container", () -> IForgeContainerType.create((windowId, inv, data) -> {
-        BlockPos pos = data.readBlockPos();
-        Level world = inv.player.getCommandSenderWorld();
-        return new MagicGeneratorContainer(windowId, world, pos, inv, inv.player);
-    }));
+    public static final RegistryObject<Block> MAGIC_ORE = BLOCKS.register("magic_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).strength(1.0F, 1.0F).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Item> MAGIC_ORE_ITEM = ITEMS.register("magic_ore",
+            () -> new BlockItem(MAGIC_ORE.get(), new Item.Properties().tab(Main.GROUP)));
     //POWERS
     public static final RegistryObject<Item> MAGIC_POWDER = ITEMS.register("magic_powder",
             () -> new Item(new Item.Properties().tab(Main.GROUP).fireResistant()));
@@ -90,5 +85,5 @@ public class Registration {
     public static final RegistryObject<EntityType<SolariaRingThrown>> SOLARIA_RING_ENTITY = ENTITY_TYPES.register("solaria_ring_entity", () -> EntityType.Builder.<SolariaRingThrown>of(SolariaRingThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("solaria_ring_entity"));
 
     public static final RegistryObject<EntityType<PowerBallThrown>> POWER_BALL_ENTITY = ENTITY_TYPES.register("power_ball_entity", () -> EntityType.Builder.<PowerBallThrown>of(PowerBallThrown::new, MobCategory.MISC).sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("power_ball_entity"));
-    
+
 }
