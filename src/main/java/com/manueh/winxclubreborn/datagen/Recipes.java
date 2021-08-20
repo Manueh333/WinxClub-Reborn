@@ -37,7 +37,7 @@ public class Recipes extends RecipeProvider {
                 .pattern("p p")
                 .pattern("ppp")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
-                .unlockedBy("power_ball", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.POWER_BALL.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
 
@@ -47,7 +47,7 @@ public class Recipes extends RecipeProvider {
                 .pattern("ppp")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
                 .define('s', Ingredient.of(Blocks.NOTE_BLOCK.asItem().getDefaultInstance()))
-                .unlockedBy("sound_wave", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.SOUND_WAVE.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.HIT_OF_NATURE.get())
@@ -56,7 +56,7 @@ public class Recipes extends RecipeProvider {
                 .pattern("ppp")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
                 .define('s', Tags.Items.SEEDS)
-                .unlockedBy("hit_of_nature", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.HIT_OF_NATURE.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.SOLARIA_RING.get())
@@ -65,7 +65,25 @@ public class Recipes extends RecipeProvider {
                 .pattern(" p ")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
                 .define('d', Ingredient.of(Blocks.DIAMOND_BLOCK.asItem().getDefaultInstance()))
-                .unlockedBy("solaria_ring", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.SOLARIA_RING.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Registration.DRAGON_FURY.get())
+                .pattern("ppp")
+                .pattern("pdp")
+                .pattern("ppp")
+                .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
+                .define('d', Items.FLINT_AND_STEEL)
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Registration.WOLF_CLAW.get())
+                .pattern("pdp")
+                .pattern("dpd")
+                .pattern("pdp")
+                .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
+                .define('d', Items.BONE)
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
     }

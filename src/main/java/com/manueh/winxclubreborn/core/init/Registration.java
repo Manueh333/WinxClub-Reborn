@@ -46,8 +46,11 @@ public class Registration {
     public static final RegistryObject<Block> MAGIC_ORE = BLOCKS.register("magic_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).strength(1.0F, 1.0F).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
     public static final RegistryObject<Item> MAGIC_ORE_ITEM = ITEMS.register("magic_ore",
             () -> new BlockItem(MAGIC_ORE.get(), new Item.Properties().tab(Main.GROUP)));
-    //POWERS
+    //ITEMS
     public static final RegistryObject<Item> MAGIC_POWDER = ITEMS.register("magic_powder",
+            () -> new Item(new Item.Properties().tab(Main.GROUP).fireResistant()));
+
+    public static final RegistryObject<Item> WINGS = ITEMS.register("wings",
             () -> new Item(new Item.Properties().tab(Main.GROUP).fireResistant()));
 
     public static final RegistryObject<Item> HIT_OF_NATURE = ITEMS.register("hit_of_nature",

@@ -123,6 +123,12 @@ repositories {
     //     dir 'libs'
     // }
 }
+repositories {
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+}
+
 
 dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
@@ -134,7 +140,9 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
-
+    implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curiosversion}")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curiosversion}")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curiosversion}:api")
     // Examples using mod jars from ./libs
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
 
