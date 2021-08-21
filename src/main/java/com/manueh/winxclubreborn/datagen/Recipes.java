@@ -86,6 +86,13 @@ public class Recipes extends RecipeProvider {
                 .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(Registration.WINGS.get())
+                .pattern("ppp")
+                .pattern("ppp")
+                .pattern("p p")
+                .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .save(consumer);
     }
 
 }

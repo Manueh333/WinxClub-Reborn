@@ -1,5 +1,6 @@
 package com.manueh.winxclubreborn.common.tiers;
 
+import com.manueh.winxclubreborn.Main;
 import com.manueh.winxclubreborn.core.init.Registration;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -12,7 +13,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum MagicArmorTier implements ArmorMaterial {
-    MAGIC("magic", 5, new int[]{1, 4, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_ELYTRA, 0.0F, 0.0F, () -> {
+    MAGIC(Main.MODID + ":magic", 5, new int[]{1, 4, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_ELYTRA, 0.0F, 0.0F, () -> {
         return Ingredient.of(Registration.MAGIC_POWDER.get());
     });
 
