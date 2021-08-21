@@ -2,9 +2,7 @@ package com.manueh.winxclubreborn.common.tiers;
 
 import com.manueh.winxclubreborn.core.init.Registration;
 import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
@@ -12,8 +10,10 @@ import java.util.function.Supplier;
 public enum MagicTier implements Tier {
     MAGIC(5, 0, 9.0F, 4.0F, 15, () -> {
         return Ingredient.of(Registration.MAGIC_POWDER.get());
+    }),
+    PHANTOBLADE(5, 560, 9.0F, 4.0F, 15, () -> {
+        return Ingredient.of(Registration.MAGIC_POWDER.get());
     });
-
     private final int level;
     private final int uses;
     private final float speed;

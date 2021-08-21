@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "winxclubreborn:item/phantoblade1_0"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "winxclubreborn:active": 0.0
+      },
+      "model": "winxclubreborn:item/phantoblade1_0"
+    },
+    {
+      "predicate": {
+        "winxclubreborn:active": 1.0
+      },
+      "model": "winxclubreborn:item/phantoblade1_1"
+    }
+  ]
+}

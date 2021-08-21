@@ -1,17 +1,11 @@
 package com.manueh.winxclubreborn.common.entity;
 
-import com.google.common.collect.Sets;
 import com.manueh.winxclubreborn.Client.ClientRenderer;
 import com.manueh.winxclubreborn.Main;
 import com.manueh.winxclubreborn.common.models.CompuExplosionModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
-import net.minecraft.client.model.TridentModel;
-import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -19,14 +13,6 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.projectile.ThrownTrident;
-import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-
-import java.util.Set;
-import java.util.stream.Stream;
 
 public class CompuExplosionThrownRenderer extends EntityRenderer<CompuExplosionThrown> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(Main.MODID, "textures/entity/compu_explosion.png");

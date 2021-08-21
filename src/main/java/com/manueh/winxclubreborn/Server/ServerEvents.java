@@ -1,21 +1,23 @@
 package com.manueh.winxclubreborn.Server;
 
-import com.manueh.winxclubreborn.Client.ClientEvents;
-import com.manueh.winxclubreborn.Main;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import com.manueh.winxclubreborn.core.init.Registration;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
 
-@Mod.EventBusSubscriber(modid = Main.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.DEDICATED_SERVER)
 public class ServerEvents {
 
-    @SubscribeEvent
-    public static void activateFly(final TickEvent.PlayerTickEvent event) {
-        if(ClientEvents.flying) {
-            event.player.fallDistance = 0;
+
+    public static void entityAttacked(LivingFallEvent event)
+    {
+        Entity attackedEnt = event.getEntity();
+        if(attackedEnt instanceof Player)
+        {
+            if(((Player) attackedEnt).getItemBySlot(EquipmentSlot.CHEST).getItem() == Registration.WINGS.get())
+            {
+                event.setDistance(0);
+            }
         }
     }
-
-
 }

@@ -7,7 +7,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
@@ -29,7 +28,7 @@ public enum MagicArmorTier implements ArmorMaterial {
 
     private MagicArmorTier(String p_40474_, int p_40475_, int[] p_40476_, int p_40477_, SoundEvent p_40478_, float p_40479_, float p_40480_, Supplier<Ingredient> p_40481_) {
         this.name = p_40474_;
-        this.durabilityMultiplier = p_40475_;
+        this.durabilityMultiplier = 0;
         this.slotProtections = p_40476_;
         this.enchantmentValue = p_40477_;
         this.sound = p_40478_;

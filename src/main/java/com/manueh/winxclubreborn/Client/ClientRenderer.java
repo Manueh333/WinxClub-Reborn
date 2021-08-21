@@ -1,8 +1,6 @@
 package com.manueh.winxclubreborn.Client;
 
 import com.manueh.winxclubreborn.Main;
-import com.manueh.winxclubreborn.common.armor.WingsLayer;
-import com.manueh.winxclubreborn.common.models.WingsModel;
 import com.manueh.winxclubreborn.common.entity.*;
 import com.manueh.winxclubreborn.common.models.*;
 import com.manueh.winxclubreborn.core.init.Registration;

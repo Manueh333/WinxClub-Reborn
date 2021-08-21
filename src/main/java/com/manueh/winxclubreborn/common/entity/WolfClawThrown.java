@@ -8,7 +8,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -57,7 +56,7 @@ public class WolfClawThrown extends ThrowableItemProjectile {
     }
 
     protected void onHitEntity(EntityHitResult p_37259_) {
-        p_37259_.getEntity().hurt(new DamageSource("wolf_claw"), 5F);
+        p_37259_.getEntity().hurt(new DamageSource("wolf_claw"), 10F);
     }
 
     @Override

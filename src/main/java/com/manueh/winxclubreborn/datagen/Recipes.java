@@ -2,8 +2,6 @@ package com.manueh.winxclubreborn.datagen;
 
 import com.manueh.winxclubreborn.core.init.Registration;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.data.BlockFamilies;
-import net.minecraft.data.BlockFamily;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -91,6 +89,31 @@ public class Recipes extends RecipeProvider {
                 .pattern("ppp")
                 .pattern("p p")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .save(consumer);
+
+
+
+
+        ShapedRecipeBuilder.shaped(Registration.PHANTOBLADE_1.get())
+                .pattern(" pp")
+                .pattern(" ap")
+                .pattern("b  ")
+                .define('p', Registration.MAGIC_POWDER.get())
+                .define('a', Items.EMERALD)
+                .define('b', Items.LEVER)
+                .group("winxclubreborn")
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Registration.PHANTOBLADE_2.get())
+                .pattern("  p")
+                .pattern(" p ")
+                .pattern("ab ")
+                .define('p', Registration.MAGIC_POWDER.get())
+                .define('a', Items.DIAMOND)
+                .define('b', Items.LEVER)
+                .group("winxclubreborn")
                 .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
     }

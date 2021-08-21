@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "winxclubreborn",
+  "pattern": [
+    "  p",
+    " p ",
+    "ab "
+  ],
+  "key": {
+    "p": {
+      "item": "winxclubreborn:magic_powder"
+    },
+    "a": {
+      "item": "minecraft:diamond"
+    },
+    "b": {
+      "item": "minecraft:lever"
+    }
+  },
+  "result": {
+    "item": "winxclubreborn:phantoblade_2"
+  }
+}

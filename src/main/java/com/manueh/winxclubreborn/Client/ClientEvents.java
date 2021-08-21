@@ -5,23 +5,13 @@ import com.manueh.winxclubreborn.core.init.Registration;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
-import net.minecraft.client.main.GameConfig;
 import net.minecraft.core.particles.*;
-import net.minecraft.nbt.Tag;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.Bindings;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.IItemHandler;
 import org.lwjgl.glfw.GLFW;
 
 @Mod.EventBusSubscriber(modid = Main.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
@@ -47,10 +37,10 @@ public class ClientEvents {
                     if(jump.isDown()) {
                         player.setDeltaMovement(player.getDeltaMovement().x,0.3f, player.getDeltaMovement().z);
 
-                    }if(crouch.isDown()) {
+                    }if(player.isShiftKeyDown()) {
                         player.setDeltaMovement(player.getDeltaMovement().x,-0.3f, player.getDeltaMovement().z);
 
-                    }if(!jump.isDown() && !crouch.isDown()) {
+                    }if(!jump.isDown() && !player.isShiftKeyDown()) {
                         player.setDeltaMovement(player.getDeltaMovement().x * 1.03,0, player.getDeltaMovement().z * 1.03);
 
                     }
@@ -76,6 +66,7 @@ public class ClientEvents {
                     }
                 }
                 player.fallDistance = 0;
+
             }
         }
     }

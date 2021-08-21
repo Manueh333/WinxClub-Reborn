@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "winxclubreborn",
+  "pattern": [
+    " pp",
+    " ap",
+    "b  "
+  ],
+  "key": {
+    "p": {
+      "item": "winxclubreborn:magic_powder"
+    },
+    "a": {
+      "item": "minecraft:emerald"
+    },
+    "b": {
+      "item": "minecraft:lever"
+    }
+  },
+  "result": {
+    "item": "winxclubreborn:phantoblade_1"
+  }
+}

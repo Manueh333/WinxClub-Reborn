@@ -1,11 +1,9 @@
 package com.manueh.winxclubreborn.common.armor;
 
-import net.minecraft.client.renderer.entity.layers.ElytraLayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Wearable;
 import net.minecraft.world.level.block.DispenserBlock;
 

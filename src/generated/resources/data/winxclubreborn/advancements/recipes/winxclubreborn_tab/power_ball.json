@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "winxclubreborn:power_ball"
+    ]
+  },
+  "criteria": {
+    "compu_explosion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "winxclubreborn:compu_explosion"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "winxclubreborn:power_ball"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "compu_explosion",
+      "has_the_recipe"
+    ]
+  ]
+}

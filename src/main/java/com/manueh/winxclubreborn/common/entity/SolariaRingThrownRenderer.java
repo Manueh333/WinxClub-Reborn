@@ -2,7 +2,6 @@ package com.manueh.winxclubreborn.common.entity;
 
 import com.manueh.winxclubreborn.Client.ClientRenderer;
 import com.manueh.winxclubreborn.Main;
-import com.manueh.winxclubreborn.common.models.CompuExplosionModel;
 import com.manueh.winxclubreborn.common.models.SolariaRingModel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
