@@ -79,16 +79,19 @@ public class Registration {
             () -> new DragonFury(new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
 
     public static final RegistryObject<Item> SOLARIA_RING = ITEMS.register("solaria_ring",
-            () -> new SolariaRing(MagicTier.MAGIC, 2, -4.0F, new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
+            () -> new SolariaRing(MagicTier.MAGIC, 2, -3.0F, new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
 
     public static final RegistryObject<Item> POWER_BALL = ITEMS.register("power_ball",
             () -> new PowerBall(new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
 
     public static final RegistryObject<Phantoblade> PHANTOBLADE_1 = ITEMS.register("phantoblade_1",
-            () -> new Phantoblade(MagicTier.PHANTOBLADE, 6, -2.3F, new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
+            () -> new Phantoblade(MagicTier.PHANTOBLADE, 6, -3F, new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
 
     public static final RegistryObject<Phantoblade> PHANTOBLADE_2 = ITEMS.register("phantoblade_2",
-            () -> new Phantoblade(MagicTier.PHANTOBLADE, 4, -2.0F, new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
+            () -> new Phantoblade(MagicTier.PHANTOBLADE, 5, -2.3F, new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
+
+    public static final RegistryObject<Phantoblade> PHANTOBLADE_3 = ITEMS.register("phantoblade_3",
+            () -> new Phantoblade(MagicTier.PHANTOBLADE, 4, -1.8F, new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
 
 
     //THROWABLE ENTITIES

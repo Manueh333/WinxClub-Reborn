@@ -116,6 +116,17 @@ public class Recipes extends RecipeProvider {
                 .group("winxclubreborn")
                 .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(Registration.PHANTOBLADE_3.get())
+                .pattern(" pp")
+                .pattern(" p ")
+                .pattern(" ab")
+                .define('p', Registration.MAGIC_POWDER.get())
+                .define('a', Items.REDSTONE)
+                .define('b', Items.LEVER)
+                .group("winxclubreborn")
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .save(consumer);
     }
 
 }

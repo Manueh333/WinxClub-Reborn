@@ -1,5 +1,6 @@
 package com.manueh.winxclubreborn.datagen;
 
+import com.manueh.winxclubreborn.Client.ClientEvents;
 import com.manueh.winxclubreborn.Main;
 import com.manueh.winxclubreborn.core.init.Registration;
 import net.minecraft.data.DataGenerator;
@@ -21,9 +22,9 @@ public class Items extends ItemModelProvider {
                 new ResourceLocation("item/handheld"), "layer0",
                 new ResourceLocation(Main.MODID, "item/magic_powder"));
 */
-        getBuilder(Registration.PHANTOBLADE_2.get().getRegistryName().getPath())
+        getBuilder(Registration.PHANTOBLADE_3.get().getRegistryName().getPath())
                 .parent(getExistingFile(mcLoc("item/handheld")))
-                .texture("layer0", "item/phantoblade2_0")
+                .texture("layer0", "item/phantoblade3_0")
                 .override().predicate(Main.PHANTOBLADE_ACTIVE_PROPERTY, 0).model(createTestModel(0)).end()
                 .override().predicate(Main.PHANTOBLADE_ACTIVE_PROPERTY, 1).model(createTestModel(1)).end();
 
@@ -31,9 +32,10 @@ public class Items extends ItemModelProvider {
     }
 
 
+
     private ItemModelBuilder createTestModel(int suffix) {
-        return getBuilder("phantoblade2_" + suffix).parent(getExistingFile(mcLoc("item/handheld")))
-                .texture("layer0", "item/phantoblade2_" + suffix);
+        return getBuilder("phantoblade3_" + suffix).parent(getExistingFile(mcLoc("item/handheld")))
+                .texture("layer0", "item/phantoblade3_" + suffix);
     }
 
 }

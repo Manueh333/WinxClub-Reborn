@@ -1,6 +1,7 @@
 package com.manueh.winxclubreborn;
 
 import com.manueh.winxclubreborn.Client.ClientEvents;
+import com.manueh.winxclubreborn.Client.ClientSetup;
 import com.manueh.winxclubreborn.Server.ServerEvents;
 import com.manueh.winxclubreborn.common.items.Phantoblade;
 import com.manueh.winxclubreborn.core.CreativeTab;
@@ -32,7 +33,7 @@ public class Main
     public Main() {
         Registration.init();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::ClientSetup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(EventPriority.HIGH, ClientSetup::setup);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, FeatureInit::generateOres);
         MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, ServerEvents::entityAttacked);
         // Register ourselves for server and other game events we are interested in
@@ -43,22 +44,9 @@ public class Main
     {
 
     }
-
     public static final ResourceLocation PHANTOBLADE_ACTIVE_PROPERTY = new ResourceLocation(Main.MODID, "active");
 
-    public void ClientSetup(final FMLClientSetupEvent event) {
-        event.enqueueWork(() -> {
-         //   MenuScreens.register(Registration.GENERATOR_CONTAINER.get(), MagicGeneratorScreen::new);
-            ClientRegistry.registerKeyBinding(ClientEvents.keyFly);
-            initTestItemOverrides();
-            });}
 
-    public static void initTestItemOverrides() {
-        Phantoblade item = Registration.PHANTOBLADE_1.get();
-        ItemProperties.register(item, PHANTOBLADE_ACTIVE_PROPERTY,
-                (stack, level, entity, damage) -> item.isActive(stack));
-        Phantoblade item2 = Registration.PHANTOBLADE_2.get();
-        ItemProperties.register(item2, PHANTOBLADE_ACTIVE_PROPERTY,
-                (stack, level, entity, damage) -> item.isActive(stack));
-    }
+
+
 }
