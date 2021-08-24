@@ -1,8 +1,12 @@
-## Welcome to GitHub Pages
+## Welcome this Minecraft Mod
 
-You can use the [editor on GitHub](https://github.com/Manueh333/WinxClub-Reborn/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+You can download here the [WinxClub Reborn Mod](https://www.curseforge.com/minecraft/mc-mods/winxclub-reborn).
+To install it you need to:
+  - Download [Minecraft Forge](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.17.1.html) 1.17.1
+  - Download [WinxClub Reborn Mod](https://www.curseforge.com/minecraft/mc-mods/winxclub-reborn) 1.17.1
+  - Double click on the forge installer.
+  - Paste the mod .jar on the folder %APPDATA%/.minecraft/mods
+  - ¡Now you can start the Minecraft and enjoy the mod!
 
 ### Markdown
 
