@@ -1,10 +1,10 @@
 package com.manueh.winxclubreborn.core;
 
 import com.manueh.winxclubreborn.core.init.Registration;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 
-public class CreativeTab extends CreativeModeTab {
+public class CreativeTab extends ItemGroup {
     public CreativeTab(String label) {
         super(label);
     }

@@ -2,16 +2,16 @@ package com.manueh.winxclubreborn.common.tiers;
 
 import com.manueh.winxclubreborn.Main;
 import com.manueh.winxclubreborn.core.init.Registration;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.LazyValue;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 import java.util.function.Supplier;
 
-public enum MagicArmorTier implements ArmorMaterial {
+public enum MagicArmorTier implements IArmorMaterial {
     MAGIC(Main.MODID + ":magic", 5, new int[]{1, 4, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_ELYTRA, 0.0F, 0.0F, () -> {
         return Ingredient.of(Registration.MAGIC_POWDER.get());
     });
@@ -24,7 +24,7 @@ public enum MagicArmorTier implements ArmorMaterial {
     private final SoundEvent sound;
     private final float toughness;
     private final float knockbackResistance;
-    private final LazyLoadedValue<Ingredient> repairIngredient;
+    private final LazyValue<Ingredient> repairIngredient;
 
     private MagicArmorTier(String p_40474_, int p_40475_, int[] p_40476_, int p_40477_, SoundEvent p_40478_, float p_40479_, float p_40480_, Supplier<Ingredient> p_40481_) {
         this.name = p_40474_;
@@ -34,14 +34,14 @@ public enum MagicArmorTier implements ArmorMaterial {
         this.sound = p_40478_;
         this.toughness = p_40479_;
         this.knockbackResistance = p_40480_;
-        this.repairIngredient = new LazyLoadedValue<>(p_40481_);
+        this.repairIngredient = new LazyValue(p_40481_);
     }
 
-    public int getDurabilityForSlot(EquipmentSlot p_40484_) {
+    public int getDurabilityForSlot(EquipmentSlotType p_40484_) {
         return HEALTH_PER_SLOT[p_40484_.getIndex()] * this.durabilityMultiplier;
     }
 
-    public int getDefenseForSlot(EquipmentSlot p_40487_) {
+    public int getDefenseForSlot(EquipmentSlotType p_40487_) {
         return this.slotProtections[p_40487_.getIndex()];
     }
 

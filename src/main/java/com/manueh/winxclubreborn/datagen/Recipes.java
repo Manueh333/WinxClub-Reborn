@@ -1,17 +1,17 @@
 package com.manueh.winxclubreborn.datagen;
 
 import com.manueh.winxclubreborn.core.init.Registration;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.criterion.InventoryChangeTrigger;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.data.IFinishedRecipe;
+import net.minecraft.data.RecipeProvider;
+import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
+
 
 public class Recipes extends RecipeProvider {
 
@@ -20,14 +20,14 @@ public class Recipes extends RecipeProvider {
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(Registration.COMPU_EXPLOSION.get())
                 .pattern("ptp")
                 .pattern("tpt")
                 .pattern("ptp")
                 .define('t', Ingredient.of(Blocks.TNT.asItem().getDefaultInstance()))
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.POWER_BALL.get())
@@ -35,7 +35,7 @@ public class Recipes extends RecipeProvider {
                 .pattern("p p")
                 .pattern("ppp")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
 
@@ -45,7 +45,7 @@ public class Recipes extends RecipeProvider {
                 .pattern("ppp")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
                 .define('s', Ingredient.of(Blocks.NOTE_BLOCK.asItem().getDefaultInstance()))
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.HIT_OF_NATURE.get())
@@ -54,7 +54,7 @@ public class Recipes extends RecipeProvider {
                 .pattern("ppp")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
                 .define('s', Tags.Items.SEEDS)
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.SOLARIA_RING.get())
@@ -63,7 +63,7 @@ public class Recipes extends RecipeProvider {
                 .pattern(" p ")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
                 .define('d', Ingredient.of(Blocks.DIAMOND_BLOCK.asItem().getDefaultInstance()))
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.DRAGON_FURY.get())
@@ -71,8 +71,8 @@ public class Recipes extends RecipeProvider {
                 .pattern("pdp")
                 .pattern("ppp")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
-                .define('d', Items.FLINT_AND_STEEL)
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .define('d', net.minecraft.item.Items.FLINT_AND_STEEL)
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.WOLF_CLAW.get())
@@ -80,8 +80,8 @@ public class Recipes extends RecipeProvider {
                 .pattern("dpd")
                 .pattern("pdp")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
-                .define('d', Items.BONE)
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .define('d', net.minecraft.item.Items.BONE)
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.WINGS.get())
@@ -89,7 +89,7 @@ public class Recipes extends RecipeProvider {
                 .pattern("ppp")
                 .pattern("p p")
                 .define('p', Registration.MAGIC_POWDER.get()).group("winxclubreborn")
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
 
@@ -100,10 +100,10 @@ public class Recipes extends RecipeProvider {
                 .pattern(" ap")
                 .pattern("b  ")
                 .define('p', Registration.MAGIC_POWDER.get())
-                .define('a', Items.EMERALD)
-                .define('b', Items.LEVER)
+                .define('a', net.minecraft.item.Items.EMERALD)
+                .define('b', net.minecraft.item.Items.LEVER)
                 .group("winxclubreborn")
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.PHANTOBLADE_2.get())
@@ -111,10 +111,10 @@ public class Recipes extends RecipeProvider {
                 .pattern(" p ")
                 .pattern("ab ")
                 .define('p', Registration.MAGIC_POWDER.get())
-                .define('a', Items.DIAMOND)
-                .define('b', Items.LEVER)
+                .define('a', net.minecraft.item.Items.DIAMOND)
+                .define('b', net.minecraft.item.Items.LEVER)
                 .group("winxclubreborn")
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(Registration.PHANTOBLADE_3.get())
@@ -122,10 +122,10 @@ public class Recipes extends RecipeProvider {
                 .pattern(" p ")
                 .pattern(" ab")
                 .define('p', Registration.MAGIC_POWDER.get())
-                .define('a', Items.REDSTONE)
-                .define('b', Items.LEVER)
+                .define('a', net.minecraft.item.Items.REDSTONE)
+                .define('b', net.minecraft.item.Items.LEVER)
                 .group("winxclubreborn")
-                .unlockedBy("compu_explosion", InventoryChangeTrigger.TriggerInstance.hasItems(Registration.COMPU_EXPLOSION.get()))
+                .unlockedBy("compu_explosion", InventoryChangeTrigger.Instance.hasItems(Registration.COMPU_EXPLOSION.get()))
                 .save(consumer);
     }
 

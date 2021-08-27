@@ -1,29 +1,29 @@
 package com.manueh.winxclubreborn.common.entity;
 
 import com.manueh.winxclubreborn.core.init.Registration;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ItemParticleOption;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.phys.HitResult;
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.projectile.ProjectileItemEntity;
+import net.minecraft.item.Item;
+import net.minecraft.particles.ItemParticleData;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
 
-public class HitOfNatureThrown extends ThrowableItemProjectile {
+public class HitOfNatureThrown extends ProjectileItemEntity {
 
 
-    public HitOfNatureThrown(EntityType<? extends ThrowableItemProjectile> p_37432_, Level world) {
+    public HitOfNatureThrown(EntityType<? extends ProjectileItemEntity> p_37432_, World world) {
         super(p_37432_, world);
     }
 
-    public HitOfNatureThrown(LivingEntity entity, Level world) {
+    public HitOfNatureThrown(LivingEntity entity, World world) {
         super(Registration.HIT_OF_NATURE_ENTITY.get(), entity, world);
     }
 
-    public HitOfNatureThrown(double x, double y, double z, Level world) {
+    public HitOfNatureThrown(double x, double y, double z, World world) {
         super(Registration.HIT_OF_NATURE_ENTITY.get(), x, y, z, world);
     }
 
@@ -33,14 +33,14 @@ public class HitOfNatureThrown extends ThrowableItemProjectile {
             double var2 = 0.08D;
 
             for(int var4 = 0; var4 < 8; ++var4) {
-                this.level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, this.getItem()), this.getX(), this.getY(), this.getZ(), ((double)this.random.nextFloat() - 0.5D) * 0.08D, ((double)this.random.nextFloat() - 0.5D) * 0.08D, ((double)this.random.nextFloat() - 0.5D) * 0.08D);
+                this.level.addParticle(new ItemParticleData(ParticleTypes.ITEM, this.getItem()), this.getX(), this.getY(), this.getZ(), ((double)this.random.nextFloat() - 0.5D) * 0.08D, ((double)this.random.nextFloat() - 0.5D) * 0.08D, ((double)this.random.nextFloat() - 0.5D) * 0.08D);
             }
         }
 
     }
 
 
-    protected void onHit(HitResult hit) {
+    protected void onHit(RayTraceResult hit) {
         super.onHit(hit);
         if (!this.level.isClientSide) {
             level.setBlockAndUpdate(new BlockPos(hit.getLocation()), Blocks.SPRUCE_LOG.defaultBlockState());
@@ -59,7 +59,7 @@ public class HitOfNatureThrown extends ThrowableItemProjectile {
             level.setBlockAndUpdate(new BlockPos(hit.getLocation().add(0, 4, 0)), Blocks.SPRUCE_LEAVES.defaultBlockState());
 
             this.level.broadcastEntityEvent(this, (byte)3);
-            this.discard();
+            this.remove();
         }
 
     }

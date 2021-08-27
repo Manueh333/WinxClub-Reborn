@@ -1,10 +1,11 @@
 package com.manueh.winxclubreborn.common.blocks;
 
-import net.minecraft.world.level.block.Block;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
 
 public class BlockBase extends Block {
 
-    public BlockBase(Properties p_49795_) {
+    public BlockBase(AbstractBlock.Properties p_49795_) {
         super(p_49795_);
     }
 

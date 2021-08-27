@@ -1,23 +1,20 @@
 package com.manueh.winxclubreborn.datagen;
 
 import com.manueh.winxclubreborn.Main;
-import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
-import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-
-import java.util.function.Function;
 
 public class BlockStates extends BlockStateProvider {
     public BlockStates(DataGenerator gen, ExistingFileHelper exFileHelper) {
         super(gen, Main.MODID, exFileHelper);
     }
 
+    @Override
+    protected void registerStatesAndModels() {
+
+    }
+/*
     @Override
     protected void registerStatesAndModels() {
         registerGeneratorBlock();
@@ -37,7 +34,7 @@ public class BlockStates extends BlockStateProvider {
             } else {
                 return modelGenerator;
             }
-        });    */
+        });
     }
 
     private void orientedBlock(Block block, Function<BlockState, ModelFile> modelFunc) {
@@ -52,4 +49,9 @@ public class BlockStates extends BlockStateProvider {
         });
     }
 
+    @Override
+    protected void registerStatesAndModels() {
+
+    }
+*/
 }

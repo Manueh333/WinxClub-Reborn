@@ -1,29 +1,29 @@
 package com.manueh.winxclubreborn.common.entity;
 
 import com.manueh.winxclubreborn.core.init.Registration;
-import net.minecraft.core.particles.ItemParticleOption;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.projectile.ProjectileItemEntity;
+import net.minecraft.item.Item;
+import net.minecraft.particles.ItemParticleData;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.EntityRayTraceResult;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
 
-public class WolfClawThrown extends ThrowableItemProjectile {
+public class WolfClawThrown extends ProjectileItemEntity {
 
 
-    public WolfClawThrown(EntityType<? extends ThrowableItemProjectile> p_37432_, Level world) {
+    public WolfClawThrown(EntityType<? extends ProjectileItemEntity> p_37432_, World world) {
         super(p_37432_, world);
     }
 
-    public WolfClawThrown(LivingEntity entity, Level world) {
+    public WolfClawThrown(LivingEntity entity, World world) {
         super(Registration.WOLF_CLAW_ENTITY.get(), entity, world);
     }
 
-    public WolfClawThrown(double x, double y, double z, Level world) {
+    public WolfClawThrown(double x, double y, double z, World world) {
         super(Registration.WOLF_CLAW_ENTITY.get(), x, y, z, world);
     }
 
@@ -34,28 +34,28 @@ public class WolfClawThrown extends ThrowableItemProjectile {
             double var2 = 0.08D;
 
             for(int var4 = 0; var4 < 8; ++var4) {
-                this.level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, this.getItem()), this.getX(), this.getY(), this.getZ(), ((double)this.random.nextFloat() - 0.5D) * 0.08D, ((double)this.random.nextFloat() - 0.5D) * 0.08D, ((double)this.random.nextFloat() - 0.5D) * 0.08D);
+                this.level.addParticle(new ItemParticleData(ParticleTypes.ITEM, this.getItem()), this.getX(), this.getY(), this.getZ(), ((double)this.random.nextFloat() - 0.5D) * 0.08D, ((double)this.random.nextFloat() - 0.5D) * 0.08D, ((double)this.random.nextFloat() - 0.5D) * 0.08D);
             }
 
         }
 
     }
 
-    protected void onHit(HitResult p_37488_) {
+    protected void onHit(RayTraceResult p_37488_) {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
 
-            //this.level.explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 4.0F, Explosion.BlockInteraction.BREAK);
+            //this.level.explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 4.0F, Explosion.Mode.BREAK);
 
             this.level.broadcastEntityEvent(this, (byte)3);
-            this.discard();
+            this.remove();
         }
 
 
 
     }
 
-    protected void onHitEntity(EntityHitResult p_37259_) {
+    protected void onHitEntity(EntityRayTraceResult p_37259_) {
         p_37259_.getEntity().hurt(new DamageSource("wolf_claw"), 10F);
     }
 

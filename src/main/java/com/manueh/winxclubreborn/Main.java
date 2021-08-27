@@ -1,21 +1,17 @@
 package com.manueh.winxclubreborn;
 
-import com.manueh.winxclubreborn.Client.ClientEvents;
 import com.manueh.winxclubreborn.Client.ClientSetup;
 import com.manueh.winxclubreborn.Server.ServerEvents;
-import com.manueh.winxclubreborn.common.items.Phantoblade;
 import com.manueh.winxclubreborn.core.CreativeTab;
 import com.manueh.winxclubreborn.core.init.FeatureInit;
 import com.manueh.winxclubreborn.core.init.Registration;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fmlclient.registry.ClientRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,7 +22,7 @@ public class Main
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "winxclubreborn";
-    public static final CreativeTab GROUP = new CreativeTab("winxclubreborn_tab");
+    public static final ItemGroup GROUP = new CreativeTab("winxclubreborn_tab");
 
 
 

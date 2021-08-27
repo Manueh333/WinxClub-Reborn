@@ -1,17 +1,17 @@
 package com.manueh.winxclubreborn.common.armor;
 
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Wearable;
-import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.block.DispenserBlock;
+import net.minecraft.enchantment.IArmorVanishable;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 
 import javax.annotation.Nullable;
 
-public class WingsItem extends Item implements Wearable {
+public class WingsItem extends Item implements IArmorVanishable {
 
-    public WingsItem(Properties p_41383_) {
+    public WingsItem(Item.Properties p_41383_) {
         super(p_41383_);
         DispenserBlock.registerBehavior(this, ArmorItem.DISPENSE_ITEM_BEHAVIOR);
     }

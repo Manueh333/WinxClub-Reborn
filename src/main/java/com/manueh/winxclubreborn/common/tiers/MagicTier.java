@@ -1,13 +1,13 @@
 package com.manueh.winxclubreborn.common.tiers;
 
 import com.manueh.winxclubreborn.core.init.Registration;
-import net.minecraft.util.LazyLoadedValue;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.item.IItemTier;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.LazyValue;
 
 import java.util.function.Supplier;
 
-public enum MagicTier implements Tier {
+public enum MagicTier implements IItemTier {
     MAGIC(5, 0, 9.0F, 4.0F, 15, () -> {
         return Ingredient.of(Registration.MAGIC_POWDER.get());
     }),
@@ -19,7 +19,7 @@ public enum MagicTier implements Tier {
     private final float speed;
     private final float damage;
     private final int enchantmentValue;
-    private final LazyLoadedValue<Ingredient> repairIngredient;
+    private final LazyValue<Ingredient> repairIngredient;
 
     private MagicTier(int p_43332_, int p_43333_, float p_43334_, float p_43335_, int p_43336_, Supplier<Ingredient> p_43337_) {
         this.level = p_43332_;
@@ -27,7 +27,7 @@ public enum MagicTier implements Tier {
         this.speed = p_43334_;
         this.damage = p_43335_;
         this.enchantmentValue = p_43336_;
-        this.repairIngredient = new LazyLoadedValue<>(p_43337_);
+        this.repairIngredient = new LazyValue(p_43337_);
     }
 
     public int getUses() {
