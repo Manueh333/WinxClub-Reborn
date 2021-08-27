@@ -25,7 +25,7 @@ public class HitOfNature extends Item {
         if (!level.isClientSide) {
             HitOfNatureThrown projectile = new HitOfNatureThrown(player, level);
             projectile.setItem(item);
-            projectile.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 0F);
+            projectile.shootFromRotation(player, player.getViewXRot(0), player.getViewYRot(0), 0.0F, 1.5F, 0F);
             level.addFreshEntity(projectile);
         }
         return InteractionResultHolder.sidedSuccess(item, level.isClientSide());

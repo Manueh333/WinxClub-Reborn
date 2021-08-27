@@ -2,7 +2,12 @@ package com.manueh.winxclubreborn.common.items;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.manueh.winxclubreborn.Client.ClientEvents;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -17,6 +22,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class Phantoblade extends TieredItem implements Vanishable {
     private final float attackDamage;
@@ -107,6 +115,23 @@ public class Phantoblade extends TieredItem implements Vanishable {
 
     public float isActive(ItemStack stack) {
         return stack.hasTag() ? stack.getTag().getInt("active") : 0;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, level, tooltip, flag);
+        Minecraft mc = Minecraft.getInstance();
+
+        if (level == null || mc.player == null) {
+            return;
+        }
+        boolean sneakPressed = Screen.hasShiftDown();
+
+        if(sneakPressed) {
+            tooltip.add(new TranslatableComponent("tooltip.winxclubreborn.phantoblade"));
+        }else {
+            tooltip.add(new TranslatableComponent("tooltip.winxclubreborn.hold_shift"));
+        }
     }
 
 }

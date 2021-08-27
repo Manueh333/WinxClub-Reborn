@@ -1,6 +1,7 @@
 package com.manueh.winxclubreborn.core.init;
 
 import com.manueh.winxclubreborn.Main;
+import com.manueh.winxclubreborn.common.armor.WingsItem;
 import com.manueh.winxclubreborn.common.entity.*;
 import com.manueh.winxclubreborn.common.items.*;
 import com.manueh.winxclubreborn.common.tiers.MagicArmorTier;
@@ -61,7 +62,7 @@ public class Registration {
             () -> new Item(new Item.Properties().tab(Main.GROUP).fireResistant()));
 
     public static final RegistryObject<Item> WINGS = ITEMS.register("wings",
-            () -> new ArmorItem(MagicArmorTier.MAGIC, EquipmentSlot.CHEST, new Item.Properties().tab(Main.GROUP).fireResistant()));
+            () -> new WingsItem(MagicArmorTier.MAGIC, EquipmentSlot.CHEST, new Item.Properties().tab(Main.GROUP).fireResistant()));
 
     public static final RegistryObject<Item> HIT_OF_NATURE = ITEMS.register("hit_of_nature",
             () -> new HitOfNature(new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
