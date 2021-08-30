@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fmlclient.registry.ClientRegistry;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT, modid = Main.MODID)

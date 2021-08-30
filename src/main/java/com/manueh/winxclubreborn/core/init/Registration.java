@@ -1,31 +1,23 @@
 package com.manueh.winxclubreborn.core.init;
 
 import com.manueh.winxclubreborn.Main;
+import com.manueh.winxclubreborn.common.armor.WingsItem;
 import com.manueh.winxclubreborn.common.entity.*;
 import com.manueh.winxclubreborn.common.items.*;
 import com.manueh.winxclubreborn.common.tiers.MagicArmorTier;
 import com.manueh.winxclubreborn.common.tiers.MagicTier;
-import com.mojang.serialization.Codec;
-import net.minecraft.data.worldgen.Features;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.OreBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -61,7 +53,7 @@ public class Registration {
             () -> new Item(new Item.Properties().tab(Main.GROUP).fireResistant()));
 
     public static final RegistryObject<Item> WINGS = ITEMS.register("wings",
-            () -> new ArmorItem(MagicArmorTier.MAGIC, EquipmentSlot.CHEST, new Item.Properties().tab(Main.GROUP).fireResistant()));
+            () -> new WingsItem(MagicArmorTier.MAGIC, EquipmentSlot.CHEST, new Item.Properties().tab(Main.GROUP).fireResistant()));
 
     public static final RegistryObject<Item> HIT_OF_NATURE = ITEMS.register("hit_of_nature",
             () -> new HitOfNature(new Item.Properties().tab(Main.GROUP).stacksTo(1).fireResistant()));
