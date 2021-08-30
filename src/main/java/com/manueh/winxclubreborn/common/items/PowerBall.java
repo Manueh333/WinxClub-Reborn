@@ -1,6 +1,5 @@
 package com.manueh.winxclubreborn.common.items;
 
-import com.manueh.winxclubreborn.common.entity.CompuExplosionThrown;
 import com.manueh.winxclubreborn.common.entity.PowerBallThrown;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;

@@ -1,10 +1,8 @@
 package com.manueh.winxclubreborn.datagen;
 
-import com.manueh.winxclubreborn.Client.ClientEvents;
 import com.manueh.winxclubreborn.Main;
 import com.manueh.winxclubreborn.core.init.Registration;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;

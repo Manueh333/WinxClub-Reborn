@@ -43,6 +43,6 @@ public class ClientRenderer {
         event.registerLayerDefinition(DRAGON_FURY_LAYER, DragonFuryModel::createLayer);
         event.registerLayerDefinition(SOLARIA_RING_LAYER, SolariaRingModel::createLayer);
         event.registerLayerDefinition(POWER_BALL_LAYER, PowerBallModel::createLayer);
-        event.registerLayerDefinition(WINGS_LAYER, WingsModel::createLayer);
+       // event.registerLayerDefinition(WINGS_LAYER, WingsModel::createLayer);
     }
 }

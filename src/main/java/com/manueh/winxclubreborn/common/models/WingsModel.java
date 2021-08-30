@@ -1,40 +1,25 @@
 package com.manueh.winxclubreborn.common.models;
 
-import com.google.common.collect.ImmutableList;
-import net.minecraft.client.model.AgeableListModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.world.entity.LivingEntity;
 
-public class WingsModel<T extends LivingEntity> extends AgeableListModel<T> {
-    private final ModelPart rightWing;
-    private final ModelPart leftWing;
+public class WingsModel {
 
-    public WingsModel(ModelPart p_170538_) {
-        this.leftWing = p_170538_.getChild("left_wing");
-        this.rightWing = p_170538_.getChild("right_wing");
-    }
-
-    public static LayerDefinition createLayer() {
+    public static ModelPart createModel() {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
-        CubeDeformation cubedeformation = new CubeDeformation(1.0F);
-        partdefinition.addOrReplaceChild("left_wing", CubeListBuilder.create().texOffs(22, 0).addBox(-12.0F, -25.0F, 1.0F, 10.0F, 12.0F, 0.0F, cubedeformation), PartPose.offsetAndRotation(0.0F, 2.3562F, 0.0F, 0, 0.0F, -0));
-        partdefinition.addOrReplaceChild("right_wing", CubeListBuilder.create().texOffs(22, 0).mirror().addBox(-12.0F, -25.0F, -1.0F, 10.0F, 12.0F, 0.0F, cubedeformation), PartPose.offsetAndRotation(0.0F, 0.6109F, 0.0F, 0, 0.0F, 0));
-        return LayerDefinition.create(meshdefinition, 64, 32);
+        CubeDeformation cubedeformation = new CubeDeformation(0.0F);
+        partdefinition.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.ZERO);
+        PartDefinition partDefinition1 = partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.ZERO);
+        partDefinition1.addOrReplaceChild("left_wing", CubeListBuilder.create().texOffs(2, 0).addBox(-8.0F, -6.0F, 0.0F, 8.0F, 12.0F, 0.0F, cubedeformation), PartPose.offsetAndRotation(0.0F, 6.0F, 2.0F, 0.0F, 2.3562F, 0.0F));
+        partDefinition1.addOrReplaceChild("right_wing", CubeListBuilder.create().texOffs(2, 12).addBox(-8.0F, -6.0F, 0.0F, 8.0F, 12.0F, 0.0F, cubedeformation), PartPose.offsetAndRotation(0.0F, 6.0F, 2.0F, 0.0F, 0.7854F, 0.0F));
+        partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("right_leg", CubeListBuilder.create(), PartPose.ZERO);
+        partdefinition.addOrReplaceChild("left_leg", CubeListBuilder.create(), PartPose.ZERO);
+        return LayerDefinition.create(meshdefinition, 32, 32).bakeRoot();
     }
 
-    protected Iterable<ModelPart> headParts() {
-        return ImmutableList.of();
-    }
-
-    protected Iterable<ModelPart> bodyParts() {
-        return ImmutableList.of(this.leftWing, this.rightWing);
-    }
-
-    @Override
-    public void setupAnim(T p_102618_, float p_102619_, float p_102620_, float p_102621_, float p_102622_, float p_102623_) {
-
-    }
 }

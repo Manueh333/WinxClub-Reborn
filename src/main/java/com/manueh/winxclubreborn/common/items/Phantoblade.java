@@ -2,7 +2,6 @@ package com.manueh.winxclubreborn.common.items;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import com.manueh.winxclubreborn.Client.ClientEvents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
